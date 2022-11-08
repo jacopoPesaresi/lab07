@@ -1,0 +1,6 @@
+#ignore all .class file
+*.class
+#ignore all bin and build files
+bin/
+build/
+*/.gradle/
