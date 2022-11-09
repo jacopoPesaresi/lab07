@@ -1,8 +1,11 @@
 URL https://github.com/jacopoPesaresi/lab07.git
 
+
 CLONE git@github.com:jacopoPesaresi/lab07.git
 
+
 BRANCH exercises
+
 
 CASA 61-anonymous-nested-enum
 (Transformers)
@@ -18,8 +21,14 @@ usato X_AXIS invece di LINE_AXIS
 si poteva prevedere l'uso di una variabile private static per il testo del JTextField(ma non l'ho fatto)
 specie per coadiuvare l'aggiornamento del JTextField
 
-
-
 CASA 63-mvc-gui-reflection
-
-
+(DrawNumberControllerImpl)
+usato un Set invece di una List
+Inizializzazione del Set fatta nel costruttore
+lasciato intonso newAttempt
+(DrawNumberStdoutView)
+erroneamente implementato un campo DrawNumberController... anche se avevo sospetto che ciò lo fosse
+(LaunchApp)
+tentavo anche io di sfruttare .forName, ma temevo nell'usare "Class<?>"
+potevo comunque passare per getConstructor (che dopo alla fine per questa modifica ho aggiunto)
+(perchè so che usare direttamente newIstance() è deprecato)

@@ -1,5 +1,7 @@
 package it.unibo.mvc;
 
+import java.lang.reflect.InvocationTargetException;
+
 import it.unibo.mvc.api.DrawNumberController;
 import it.unibo.mvc.controller.DrawNumberControllerImpl;
 import it.unibo.mvc.model.DrawNumberImpl;
@@ -17,6 +19,7 @@ public final class LaunchApp {
      * Runs the application.
      *
      * @param args ignored
+     * @throws SecurityException
      * @throws ClassNotFoundException if the fetches class does not exist
      * @throws NoSuchMethodException if the 0-ary constructor do not exist
      * @throws InvocationTargetException if the constructor throws exceptions
@@ -35,19 +38,15 @@ public final class LaunchApp {
     }
      */
     
-    public static void main(final String... args) {
+    public static void main(final String... args) throws IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
         //final Class c1 = Class.forName()
         ////final Class<DrawNumberImpl> Model = DrawNumberImpl.class;
         ////final var model = Model.newInstance();
         
         //final DrawNumberController app = new DrawNumberControllerImpl(model);
         ////final Class<DrawNumberControllerImpl> App = DrawNumberControllerImpl.class;
-        ////final DrawNumberController app = App.newInstance();
-        //app.new
-        
-        //app.addView(new DrawNumberSwingView());
-        //app.addView(new DrawNumberSwingView());
-        //app.addView(new DrawNumberStdoutView());
+        ////final DrawNumberController app = App.newInstance();      
+       
         //final String packView = "it.unibo.mvc.view";
 
 
@@ -59,10 +58,9 @@ public final class LaunchApp {
 
         for(int i=0;i<3;i++){
             try {
-                app.addView(swingV.newInstance());
-                app.addView(stdoutV.newInstance());
+                app.addView(swingV.getConstructor().newInstance());
+                app.addView(stdoutV.getConstructor().newInstance());
             } catch (InstantiationException | IllegalAccessException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
            
