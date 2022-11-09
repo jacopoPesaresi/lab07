@@ -59,23 +59,45 @@ public final class MonthSorterNested implements MonthSorter {
 
     @Override
     public Comparator<String> sortByDays() {
+        // TODO Auto-generated method stub
+        return new SortByDays();
+    }
+
+    @Override
+    public Comparator<String> sortByOrder() {
+        // TODO Auto-generated method stub
+        return new SortByOrder();
+    }
+
+
+    /*
+    @Override
+    public Comparator<String> sortByDays() {
         return new Comparator<String>() {
-            @Override
-            public int compare(String arg0, String arg1) {
-                Month m1 = Month.fromString(arg0);
-                Month m2 = Month.fromString(arg1);
-                //return m1.days-m2.days;
-                // return Integer.compare(m1.days,m2.days);
-                return m1.getDay() - m2.getDay();
-            }
-            
+           
         };
     }
 
     @Override
     public Comparator<String> sortByOrder() {
         return new Comparator<String>() {
-            @Override
+            
+        };
+    }
+*/
+    private class SortByDays implements Comparator<String>{
+        @Override
+        public int compare(String arg0, String arg1) {
+            Month m1 = Month.fromString(arg0);
+            Month m2 = Month.fromString(arg1);
+            //return m1.days-m2.days;
+            // return Integer.compare(m1.days,m2.days);
+            return m1.getDay() - m2.getDay();
+        }
+    }
+
+    private class SortByOrder implements Comparator<String>{
+        @Override
             public int compare(String arg0, String arg1) {
                 Month m1 = Month.fromString(arg0);
                 Month m2 = Month.fromString(arg1);
@@ -83,6 +105,7 @@ public final class MonthSorterNested implements MonthSorter {
                 return m1.ordinal() - m2.ordinal();
             }
             
-        };
     }
+
+    
 }
