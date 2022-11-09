@@ -1,8 +1,8 @@
 package it.unibo.nestedenum;
 
 import java.util.Comparator;
-import java.util.Locale;
-import java.util.Objects;
+//import java.util.Locale;
+//import java.util.Objects;
 
 /**
  * Implementation of {@link MonthSorter}.

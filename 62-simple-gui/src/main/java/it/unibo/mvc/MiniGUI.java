@@ -37,13 +37,16 @@ public class MiniGUI {
         
         //part 1
         final JPanel newcanvas = new JPanel();
-        newcanvas.setLayout(new BoxLayout(newcanvas, BoxLayout.X_AXIS)); //TODO-confermami gli argomenti di BoxLayout
+        newcanvas.setLayout(new BoxLayout(newcanvas, BoxLayout.X_AXIS)); 
         canvas.add(newcanvas,BorderLayout.CENTER);
         newcanvas.add(write);
+        //task 6, part 1: tried to delete/add the line code
+        //"frame.pack();"
+        //to see difference, only curiosity
         
         //part 2
-        JTextField tfield = new JTextField("Result");
-        canvas.add(tfield,BorderLayout.NORTH);
+        final JTextField tfield = new JTextField("Result");
+        canvas.add(tfield, BorderLayout.NORTH);
         
         
         //default operations to show the windows
@@ -57,6 +60,8 @@ public class MiniGUI {
         write.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent e) {
+                
+                //part 3, by "System.out.println(randomGenerator.nextInt())" to
                 int temp = randomGenerator.nextInt();
                 System.out.println(temp);
                 tfield.setText(Integer.toString(temp));
