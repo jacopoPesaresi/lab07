@@ -14,6 +14,11 @@ gestito in modo più dinamico (forse troppo) il fromString
 il return dei Comparator poteva sfruttare i metodi statici di Integer e di String (lasciato sottointeso comunque dai commenti lasciati dai commit prima delle correzioni)
 
 CASA 62-simple-gui
+usato X_AXIS invece di LINE_AXIS
+si poteva prevedere l'uso di una variabile private static per il testo del JTextField(ma non l'ho fatto)
+specie per coadiuvare l'aggiornamento del JTextField
+
+
 
 CASA 63-mvc-gui-reflection
 

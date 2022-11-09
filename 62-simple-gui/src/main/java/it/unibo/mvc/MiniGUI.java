@@ -49,7 +49,7 @@ public class MiniGUI {
         canvas.add(tfield, BorderLayout.NORTH);
         
         
-        //default operations to show the windows
+        //default operations to show the windows (last part of previous code)
         frame.setContentPane(canvas);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
