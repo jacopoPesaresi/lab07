@@ -54,15 +54,11 @@ public final class Transformers {
      * @param <O> output elements type
      */
     public static <I, O> List<O> transform(final Iterable<I> base, final Function<I, O> transformer) {
-       // return flattenTransform(base, transformer);
         return flattenTransform(base, new Function<I,Collection<? extends O>>() {
-
             @Override
             public Collection<? extends O> call(I input) {
-                // TODO Auto-generated method stub
                 return List.of(transformer.call(input));
             }
-            
         });
     }
 
@@ -80,17 +76,6 @@ public final class Transformers {
      */
     public static <I> List<? extends I> flatten(final Iterable<? extends Collection<? extends I>> base) {
         return flattenTransform(base, Function.identity());
-        /*
-        return flattenTransform(base, new Function<I,Collection<? extends O>>() {
-
-            @Override
-            public Collection<? extends O> call(I input) {
-                // TODO Auto-generated method stub
-                return new ArrayList<>(List.of(input, input, input));
-            }
-            
-        });
-        */
     }
 
     /**
@@ -108,10 +93,8 @@ public final class Transformers {
      */
     public static <I> List<I> select(final Iterable<I> base, final Function<I, Boolean> test) {
         return flattenTransform(base, new Function<I,Collection<? extends I>>() {
-
             @Override
             public Collection<? extends I> call(I input) {
-                // TODO Auto-generated method stub
                 return test.call(input) ? List.of(input) : new ArrayList<I>();
             }
             
@@ -133,10 +116,8 @@ public final class Transformers {
      */
     public static <I> List<I> reject(final Iterable<I> base, final Function<I, Boolean> test) {
         return flattenTransform(base, new Function<I,Collection<? extends I>>() {
-
             @Override
             public Collection<? extends I> call(I input) {
-                // TODO Auto-generated method stub
                 return test.call(input) ? new ArrayList<>(): List.of(input);
             }
             
