@@ -8,6 +8,10 @@ CASA 61-anonymous-nested-enum
 (Transformers)
 in select, invece di ArrayList() potevo usare List.of()
 reject poteva essere meno DRY
+(MonthSorterNested)
+enum NON l'ho fatta privata
+gestito in modo più dinamico (forse troppo) il fromString
+il return dei Comparator poteva sfruttare i metodi statici di Integer e di String (lasciato sottointeso comunque dai commenti lasciati dai commit prima delle correzioni)
 
 CASA 62-simple-gui
 
