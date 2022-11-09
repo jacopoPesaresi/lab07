@@ -2,5 +2,8 @@
 *.class
 #ignore all bin and build files
 bin/
+/bin/
+*bin/
+bin/*
 build/
 */.gradle/
